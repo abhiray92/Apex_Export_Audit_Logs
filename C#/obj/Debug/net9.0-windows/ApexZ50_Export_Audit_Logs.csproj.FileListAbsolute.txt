@@ -1,0 +1,14 @@
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\bin\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.deps.json
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\bin\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.dll
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\bin\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.pdb
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.GeneratedMSBuildEditorConfig.editorconfig
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.AssemblyInfoInputs.cache
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.AssemblyInfo.cs
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.csproj.CoreCompileInputs.cache
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.dll
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\refint\ApexZ50_Export_Audit_Logs.dll
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.pdb
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ref\ApexZ50_Export_Audit_Logs.dll
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\bin\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.exe
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\bin\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.runtimeconfig.json
+c:\Software\ApexZ50_Updated_27Jan2025\ApexZ50_Export_Audit_Logs\obj\Debug\net9.0-windows\ApexZ50_Export_Audit_Logs.genruntimeconfig.cache

@@ -1,0 +1,112 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+using System.Net.WebSockets;
+
+public class LogService
+{
+    public async Task ExportAuditLogsAsync(string instrumentName, long? serialNumber, string logFilePath, string uri)
+    {
+        try
+        {
+            using (var webSocketClient = new WebSocketClient())
+            {
+                await webSocketClient.ConnectAsync(uri);
+                Console.WriteLine("Connected to WebSocket for audit logs.");
+
+                var request = new
+                {
+                    type = "get",
+                    group = "thirdPartyAPI",
+                    data = new
+                    {
+                        field = "auditTrails",
+                        value = new
+                        {
+                            startDateTime = DateTime.UtcNow.Date.ToString("yyyy-MM-ddTHH:mm:ss.000Z"),
+                            endDateTime = DateTime.UtcNow.Date.AddDays(1).AddTicks(-1).ToString("yyyy-MM-ddTHH:mm:ss.000Z")
+                        }
+                    },
+                    messageID = Guid.NewGuid().ToString()
+                };
+
+                string jsonRequest = JsonSerializer.Serialize(request);
+                await webSocketClient.SendAsync(jsonRequest);
+
+                string response = await webSocketClient.ReceiveAsync();
+                //Console.WriteLine("Received audit logs JSON response: " + response);
+
+                var auditResponse = JsonSerializer.Deserialize<AuditLogResponse>(response);
+                await WriteLogsToFile(auditResponse?.data?.value, instrumentName, serialNumber, logFilePath);
+            }
+        }
+        catch (JsonException jsonEx)
+        {
+            Console.WriteLine($"JSON error occurred: {jsonEx.Message}");
+            PopupService.ShowPopup("Invalid Login. The ID/Password is incorrect or the user does not have sufficient privileges", "Warning");
+            Environment.Exit(1);
+        }
+        catch (WebSocketException webSocketEx)
+        {
+            Console.WriteLine($"WebSocket error occurred: {webSocketEx.Message}");
+            PopupService.ShowPopup("WebSocket connection failed.", "Warning");
+            Environment.Exit(1);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+            PopupService.ShowPopup("An unexpected error occurred. Please try again.", "Warning");
+            Environment.Exit(1);
+        }
+    }
+
+    private async Task WriteLogsToFile(List<AuditLog>? logData, string instrumentName, long? serialNumber, string logFilePath)
+    {
+        if (logData?.Count > 0)
+        {
+            StringBuilder logContent = new StringBuilder();
+            logContent.AppendLine($"Instrument Name: {instrumentName}");
+            logContent.AppendLine($"Serial Number: {serialNumber}");
+            logContent.AppendLine(); // Add a blank line for readability
+
+            // Calculate column widths based on the longest entry
+            int instrumentNameWidth = Math.Max("Instrument Name".Length, instrumentName.Length) + 5;
+            int timestampWidth = Math.Max("Timestamp".Length, "25-Jan-2025 15:17:08".Length) + 5;
+            int userWidth = Math.Max("User".Length, logData.Max(log => log.user?.Length ?? 0)) + 5;
+            int messageWidth = Math.Max("Message".Length, logData.Max(log => log.message?.Length ?? 0)) + 5;
+            // Add column titles with fixed widths
+            
+            logContent.AppendLine($"{PadRight("Instrument Name", instrumentNameWidth)}{PadRight("Timestamp", timestampWidth)}{PadRight("User", userWidth)}{PadRight("Message", messageWidth)}")
+            
+            foreach (var log in logData)
+            {
+                if (log != null)
+                {
+                    string timestamp = DateTime.TryParse(log.timestamp, out DateTime parsedTimestamp)
+                        ? parsedTimestamp.ToLocalTime().ToString("dd-MMM-yyyy HH:mm:ss")
+                        : "Invalid Timestamp";
+
+                    logContent.AppendLine($"{PadRight(instrumentName, instrumentNameWidth)}{PadRight(timestamp, timestampWidth)}{PadRight(log.user, userWidth)}{PadRight(log.message, messageWidth)}");
+                }
+            }
+            await File.WriteAllTextAsync(logFilePath, logContent.ToString());
+            Console.WriteLine($"Logs exported to {logFilePath}");
+            PopupService.ShowPopup($"Logs exported to {logFilePath}", "Notification");
+        }
+        else
+        {
+            Console.WriteLine("No log data found.");
+        }
+    }
+
+    private static string PadRight(string text, int width)
+    {
+        if (text.Length >= width)
+            return text.Substring(0, width);
+        return text.PadRight(width);
+    }
+
+    
+}
