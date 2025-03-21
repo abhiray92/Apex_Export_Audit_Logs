@@ -35,7 +35,7 @@ The Apex Instrument Logger Suite is a multi-language application designed to int
 
 1. **Clone the repository**:
 
-   ```bash
+   ```
    git clone https://github.com/abhiray92/Apex_Export_Audit_Logs.git
 2. Open the solution in Visual Studio and restore the NuGet packages.
 3. Build the project and configure any necessary settings in appsettings.json.
@@ -66,11 +66,13 @@ The Apex Instrument Logger Suite is a multi-language application designed to int
 ### Python Usage
 1. Update the uri variable in main.py with the WebSocket URL of your instrument.
 2. Execute the script:
-    '''python main.py'''
+    ```
+    python main.py
    
 ### PowerShell Usage
 1. Execute the PowerShell scripts in the terminal, update the URI variable if necessary:
-    '''.\Export-AuditLogs.ps1'''
+    ```
+    .\Export-AuditLogs.ps1
 
 ## Contributing
 Contributions are welcome! Feel free to submit pull requests or open issues for enhancements, bug fixes, or documentation improvements.
