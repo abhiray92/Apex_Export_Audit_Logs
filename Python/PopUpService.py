@@ -11,6 +11,6 @@ class PopUpService:
         if title == "Notification":
             messagebox.showinfo(title, message)
         else:
-            full_message = message+"\n\nFor further assistance contact BioNX IT Team at BIONXMRLIT@msd.com"
+            full_message = message+"\n\nFor further assistance contact IT Team at xxxxx@xxxx.com"
             messagebox.showerror(title, full_message)
         root.destroy()  # Close the Tkinter window after showing the message
