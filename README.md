@@ -57,14 +57,17 @@ The Apex Instrument Logger Suite is a multi-language application designed to int
 
 
 ##Usage
+
 ###C# Usage
 1. Navigate to the project folder and open the solution in Visual Studio.
 2. Update the appsettings.json with the WebSocket URI of your instrument.
 3. Run the Program.cs to start fetching instrument details and exporting logs.
+   
 ###Python Usage
 1. Update the uri variable in main.py with the WebSocket URL of your instrument.
 2. Execute the script:
     '''python main.py'''
+   
 ###PowerShell Usage
 1. Execute the PowerShell scripts in the terminal, update the URI variable if necessary:
     '''.\Export-AuditLogs.ps1'''
