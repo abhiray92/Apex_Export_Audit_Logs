@@ -79,8 +79,8 @@ The list of selectable systems lives in `machines.json`, which is copied next to
 ```json
 {
   "Machines": [
-    { "SystemId": "LE-L434-01", "IpAddress": "10.245.240.192" },
-    { "SystemId": "LE-L434-02", "IpAddress": "10.245.240.193" }
+    { "SystemId": "Apex 01", "IpAddress": "10.x.x.1" },
+    { "SystemId": "Apex-02", "IpAddress": "10.x.x.2" }
   ]
 }
 ```
