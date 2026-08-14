@@ -7,8 +7,10 @@ public static class PopupService
         MessageBoxIcon icon = messageType == "Notification" ? MessageBoxIcon.Information : MessageBoxIcon.Warning;
         if(messageType != "Notification" )
         {
-             message += "\n\n For further assistance contact IT Team at *******@.com";
+             message += "\n\n For further assistance contact BioNX IT Team at BIONXMRLIT@msd.com";
         }
         MessageBox.Show(message, messageType, MessageBoxButtons.OK, icon);
+
+        //Contact BioNX IT Team at BioNXMRLIT@msd.com //If error/warning
     }
 }

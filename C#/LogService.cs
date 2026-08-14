@@ -7,7 +7,7 @@ using System.Net.WebSockets;
 
 public class LogService
 {
-    public async Task ExportAuditLogsAsync(string instrumentName, long? serialNumber, string logFilePath, string uri)
+    public async Task ExportAuditLogsAsync(string instrumentName, long? serialNumber, string logFilePath, string uri, DateTime selectedDate)
     {
         try
         {
@@ -15,6 +15,10 @@ public class LogService
             {
                 await webSocketClient.ConnectAsync(uri);
                 Console.WriteLine("Connected to WebSocket for audit logs.");
+		
+		// Calculate start and end date-time based on selectedDate
+            	var startDateTime = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day, 0, 0, 0, DateTimeKind.Utc);
+            	var endDateTime = startDateTime.AddDays(1).AddTicks(-1); // End of the selected day
 
                 var request = new
                 {
@@ -25,8 +29,8 @@ public class LogService
                         field = "auditTrails",
                         value = new
                         {
-                            startDateTime = DateTime.UtcNow.Date.ToString("yyyy-MM-ddTHH:mm:ss.000Z"),
-                            endDateTime = DateTime.UtcNow.Date.AddDays(1).AddTicks(-1).ToString("yyyy-MM-ddTHH:mm:ss.000Z")
+                            startDateTime = startDateTime.ToString("yyyy-MM-ddTHH:mm:ss.000Z"),
+	                    endDateTime = endDateTime.ToString("yyyy-MM-ddTHH:mm:ss.000Z")
                         }
                     },
                     messageID = Guid.NewGuid().ToString()
@@ -77,8 +81,8 @@ public class LogService
             int userWidth = Math.Max("User".Length, logData.Max(log => log.user?.Length ?? 0)) + 5;
             int messageWidth = Math.Max("Message".Length, logData.Max(log => log.message?.Length ?? 0)) + 5;
             // Add column titles with fixed widths
-            
-            logContent.AppendLine($"{PadRight("Instrument Name", instrumentNameWidth)}{PadRight("Timestamp", timestampWidth)}{PadRight("User", userWidth)}{PadRight("Message", messageWidth)}")
+
+            logContent.AppendLine($"{PadRight("Instrument Name", instrumentNameWidth)}{PadRight("Timestamp", timestampWidth)}{PadRight("User", userWidth)}{PadRight("Message", messageWidth)}");
             
             foreach (var log in logData)
             {

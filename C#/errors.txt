@@ -1,0 +1,88 @@
+[{
+	"resource": "/c:/software/ApexZ50_Updated_27Jan2025/ApexZ50_Export_Audit_Logs/Program.cs",
+	"owner": "DocumentCompilerSemantic",
+	"code": {
+		"value": "CS1503",
+		"target": {
+			"$mid": 1,
+			"path": "/query/roslyn.query",
+			"scheme": "https",
+			"authority": "msdn.microsoft.com",
+			"query": "appId=roslyn&k=k(CS1503)"
+		}
+	},
+	"severity": 8,
+	"message": "Argument 5: cannot convert from 'System.DateTime?' to 'System.DateTime'",
+	"startLineNumber": 23,
+	"startColumn": 126,
+	"endLineNumber": 23,
+	"endColumn": 138
+},{
+	"resource": "/C:/Program Files/dotnet/sdk/9.0.200/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets",
+	"owner": "csharp-build",
+	"code": "NETSDK1137",
+	"severity": 4,
+	"message": "It is no longer necessary to use the Microsoft.NET.Sdk.WindowsDesktop SDK. Consider changing the Sdk attribute of the root Project element to 'Microsoft.NET.Sdk'. [C:\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj]",
+	"startLineNumber": 148,
+	"startColumn": 5,
+	"endLineNumber": 148,
+	"endColumn": 5
+},{
+	"resource": "/C:/Program Files/dotnet/sdk/9.0.200/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets",
+	"owner": "csharp-build",
+	"code": "NETSDK1137",
+	"severity": 4,
+	"message": "It is no longer necessary to use the Microsoft.NET.Sdk.WindowsDesktop SDK. Consider changing the Sdk attribute of the root Project element to 'Microsoft.NET.Sdk'. [C:\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj]",
+	"startLineNumber": 148,
+	"startColumn": 5,
+	"endLineNumber": 148,
+	"endColumn": 5
+},{
+	"resource": "/c:/software/ApexZ50_Updated_27Jan2025/ApexZ50_Export_Audit_Logs/LogService.cs",
+	"owner": "DocumentCompilerSemantic",
+	"code": {
+		"value": "CS8604",
+		"target": {
+			"$mid": 1,
+			"path": "/query/roslyn.query",
+			"scheme": "https",
+			"authority": "msdn.microsoft.com",
+			"query": "appId=roslyn&k=k(CS8604)"
+		}
+	},
+	"severity": 4,
+	"message": "Possible null reference argument for parameter 'text' in 'string LogService.PadRight(string text, int width)'.",
+	"startLineNumber": 95,
+	"startColumn": 139,
+	"endLineNumber": 95,
+	"endColumn": 147
+},{
+	"resource": "/c:/software/ApexZ50_Updated_27Jan2025/ApexZ50_Export_Audit_Logs/LogService.cs",
+	"owner": "DocumentCompilerSemantic",
+	"code": {
+		"value": "CS8604",
+		"target": {
+			"$mid": 1,
+			"path": "/query/roslyn.query",
+			"scheme": "https",
+			"authority": "msdn.microsoft.com",
+			"query": "appId=roslyn&k=k(CS8604)"
+		}
+	},
+	"severity": 4,
+	"message": "Possible null reference argument for parameter 'text' in 'string LogService.PadRight(string text, int width)'.",
+	"startLineNumber": 95,
+	"startColumn": 170,
+	"endLineNumber": 95,
+	"endColumn": 181
+},{
+	"resource": "/c:/software/ApexZ50_Updated_27Jan2025/ApexZ50_Export_Audit_Logs/Program.cs",
+	"owner": "csharp-build",
+	"code": "CS8892",
+	"severity": 4,
+	"message": "Method 'Program.Main(string[])' will not be used as an entry point because a synchronous entry point 'Program_Test.Main(string[])' was found. [C:\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj]",
+	"startLineNumber": 6,
+	"startColumn": 23,
+	"endLineNumber": 6,
+	"endColumn": 23
+}]

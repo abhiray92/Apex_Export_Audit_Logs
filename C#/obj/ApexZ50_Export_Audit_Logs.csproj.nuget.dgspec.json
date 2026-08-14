@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj": {}
+    "\\\\10.245.246.76\\c$\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj": {}
   },
   "projects": {
-    "c:\\Software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj": {
+    "\\\\10.245.246.76\\c$\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj",
+        "projectUniqueName": "\\\\10.245.246.76\\c$\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj",
         "projectName": "ApexZ50_Export_Audit_Logs",
-        "projectPath": "c:\\Software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj",
+        "projectPath": "\\\\10.245.246.76\\c$\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\ApexZ50_Export_Audit_Logs.csproj",
         "packagesPath": "C:\\Users\\abhisher\\.nuget\\packages\\",
-        "outputPath": "c:\\Software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\obj\\",
+        "outputPath": "\\\\10.245.246.76\\c$\\software\\ApexZ50_Updated_27Jan2025\\ApexZ50_Export_Audit_Logs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\abhisher\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0-windows"
+          "net8.0-windows"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0-windows7.0": {
-            "targetAlias": "net9.0-windows",
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
-        "net9.0-windows7.0": {
-          "targetAlias": "net9.0-windows",
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
           "imports": [
             "net461",
             "net462",
@@ -62,7 +61,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.423/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

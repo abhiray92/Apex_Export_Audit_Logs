@@ -2,11 +2,29 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>Export_AuditLogs</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
+    <!-- Two shippable versions are built from this single code base:
+         - Admin: includes the date picker (build with -c Admin)
+         - User:  exports the current date only (build with -c User) -->
+    <Configurations>Debug;Release;Admin;User</Configurations>
   </PropertyGroup>
+
+  <!-- Define ADMIN_VERSION for the Admin build (and for Debug, so the full
+       feature set is available while developing). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Admin' Or '$(Configuration)' == 'Debug'">
+    <DefineConstants>$(DefineConstants);ADMIN_VERSION</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Ship the machine list next to the executable so IT can update IPs
+       without recompiling. -->
+  <ItemGroup>
+    <None Update="machines.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
